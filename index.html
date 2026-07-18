@@ -270,11 +270,13 @@
     </div>
 
     <!-- JAVASCRIPT LOGIC -->
+    <script src="./trivia-data.js"></script>
     <script>
         let currentHole = 0;
         let score = 0; 
         let soundOn = true;
         let currentDifficulty = 'amateur';
+        let shuffledQuestions = [];
 
         const holeNames = [
             { name: "Hole 1: Tea Olive (Augusta National)", image: "./TeaOliveAugustaNational.png" },
@@ -297,6 +299,7 @@
             { name: "Hole 18: 18th at Pebble Beach", image: "./18thPebbleBeach.jpg" }
         ];
 
+        /*
         // Database of Questions Organized by Difficulty
         const triviaDatabase = {
             "amateur": [
@@ -847,7 +850,22 @@
                     example: "Example: A player cannot use the 'unplayable' rule to escape a penalty area; they are strictly bound by Rule 17."
                 }
             ]
-        };
+        */
+
+        function shuffleQuestions(items) {
+            const copy = [...items];
+            for (let i = copy.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [copy[i], copy[j]] = [copy[j], copy[i]];
+            }
+            return copy;
+        }
+
+        function getQuestionSet() {
+            const database = window.triviaDatabase || {};
+            const pool = Array.isArray(database[currentDifficulty]) ? database[currentDifficulty] : [];
+            return shuffleQuestions(pool).slice(0, Math.min(18, pool.length));
+        }
 
         function toggleSound() {
             soundOn = !soundOn;
@@ -883,6 +901,7 @@
             currentDifficulty = document.getElementById('difficulty').value;
             currentHole = 0;
             score = 0;
+            shuffledQuestions = getQuestionSet();
             updateScorecard();
             loadQuestion();
             showScreen('course');
@@ -896,15 +915,17 @@
             document.getElementById('explanation-box').style.display = 'none';
             document.getElementById('choices-container').style.display = 'flex';
             
-            const currentQuestions = triviaDatabase[currentDifficulty];
-            
-            // Safety check if currentHole exceeds questions
-            if(currentHole >= currentQuestions.length || currentHole >= 18) {
+            if (shuffledQuestions.length === 0) {
                 showNineteenthHole();
                 return;
             }
 
-            const data = currentQuestions[currentHole];
+            if (currentHole >= shuffledQuestions.length || currentHole >= 18) {
+                showNineteenthHole();
+                return;
+            }
+
+            const data = shuffledQuestions[currentHole];
             const holeInfo = holeNames[currentHole];
             
             document.getElementById('hole-title').innerText = holeInfo.name;
@@ -966,8 +987,7 @@
 
         function nextHole() {
             currentHole++;
-            const currentQuestions = triviaDatabase[currentDifficulty];
-            if (currentHole < currentQuestions.length && currentHole < 18) {
+            if (currentHole < shuffledQuestions.length && currentHole < 18) {
                 updateScorecard();
                 loadQuestion();
             } else {
