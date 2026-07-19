@@ -1380,8 +1380,8 @@
             question: "You use a laser rangefinder that measures elevation changes (slope) on the 1st hole.",
             choices: [
                 { text: "Disqualification immediately.", scoreChange: 2 },
-                { text: "General Penalty on the first breach, Disqualification for a second breach.", scoreChange: 0, correct: true },
-                { text: "No penalty as long as it's turned off.", scoreChange: 1 }
+                { text: "1 penalty stroke on the first breach, Disqualification for a second breach.", scoreChange: 1},
+                { text: "No penalty as long as it's turned off.", scoreChange: 0, correct: true  }
             ],
             explanation: "Using a device to measure elevation changes is not allowed. The penalty for the first breach of using equipment in an abnormal way is the General Penalty, and the penalty for a second breach is Disqualification.",
             example: "Example: Make sure the 'slope' toggle switch on your rangefinder is visibly turned off before teeing off."
@@ -1523,8 +1523,8 @@
                 { text: "You win the hole.", scoreChange: 0, correct: true },
                 { text: "Your opponent replays the stroke.", scoreChange: 1 }
             ],
-            explanation: "If an opponent's ball in motion is deliberately deflected at a time when there is no reasonable chance it can be holed, the result of the hole has been decided and the player wins the hole.",
-            example: "Example: Stopping a completely missed putt to save time essentially acts as a concession of the match's state."
+            explanation: "In match play, if you deliberately stop your opponent's moving ball when there is no reasonable chance it can be holed, you avoid the standard penalty for deflecting a ball under the exception to Rule 11.2a. Instead, this action simply concedes their next tap-in stroke (Rule 3.2b(1)) or wins you the hole outright if their putt had to go in to tie the hole (Rule 3.2a(1)).",
+            example: "Example: Stopping a completely missed putt to save time essentially acts as a concession of your opponent's next stroke."
         },
         {
             question: "You find a muddy ball in the rough. You lift it to identify it without marking its spot first.",
@@ -1634,7 +1634,7 @@
                 { text: "You must replace the ball on the lip.", scoreChange: 1 }
             ],
             explanation: "You are allowed a reasonable time to reach the hole and ten extra seconds. If it falls in after that time, you have holed out but must add one penalty stroke.",
-            example: "Example: Tour players often nervously watch their ball for exactly 10 seconds before tapping it in to avoid the penalty."
+            example: "Example: Tour players often nervously watch their ball for exactly 10 seconds before tapping it in."
         },
         {
             question: "You drop your ball from knee height. It accidentally hits your foot before striking the ground.",
