@@ -1077,184 +1077,724 @@
 
     "rules-official": [
         {
-            question: "In a stroke-play competition, the Committee realizes they miscalculated a handicap, resulting in the wrong player winning. The competition has already closed.",
-            choices: [
-                { text: "The result stands.", scoreChange: 2 },
-                { text: "The mistake should be corrected and results amended.", scoreChange: 0, correct: true },
-                { text: "The players must play a playoff.", scoreChange: 1 }
-            ],
-            explanation: "An administrative mistake has no time limit for correction, even after a competition has closed. The results should be amended.",
-            example: "Example: If the tournament committee posts the wrong winner due to a math error, they can strip the trophy and give it to the correct player days later."
-        },
-        {
-            question: "A player returns their scorecard with a 4 on a hole, but they actually scored a 5. What is the penalty?",
-            choices: [
-                { text: "2 penalty strokes.", scoreChange: 1 },
-                { text: "Disqualification.", scoreChange: 0, correct: true },
-                { text: "No penalty, the score is adjusted.", scoreChange: 2 }
-            ],
-            explanation: "If a player returns a score lower than actually taken, they are disqualified. If they return a higher score, the higher score stands.",
-            example: "Example: Roberto De Vicenzo missed out on a playoff at the 1968 Masters because he signed a scorecard that had a 4 instead of his actual 3."
-        },
-        {
-            question: "In match play, Player A concedes Player B's 3-foot putt. Player B then carelessly putts the ball anyway and misses it.",
+            question: "In match play, Player A concedes Player B's 3-foot putt. Player B carelessly putts it anyway and misses.",
             choices: [
                 { text: "Player B loses the hole.", scoreChange: 2 },
-                { text: "Player B must count the missed stroke.", scoreChange: 1 },
-                { text: "The concession is final. Player B has completed the hole.", scoreChange: 0, correct: true }
+                { text: "The concession is final; Player B has completed the hole.", scoreChange: 0, correct: true },
+                { text: "Player B must count the missed stroke.", scoreChange: 1 }
             ],
-            explanation: "A concession is final and cannot be declined or withdrawn. The hole was completed the moment the concession was made.",
+            explanation: "A concession is final and cannot be declined or withdrawn. Your opponent has then holed out with a score that includes that conceded stroke, and the ball may be removed by anyone.",
             example: "Example: Jack Nicklaus's famous concession to Tony Jacklin at the 1969 Ryder Cup ended the match instantly, regardless of what Jacklin did next."
         },
         {
-            question: "In match play, a player declares their handicap to their opponent. It is later discovered they declared a handicap that was too high.",
+            question: "In a net-score match, you declare a handicap that is too high, and it affects the number of strokes you give or get. What is the penalty?",
             choices: [
-                { text: "Disqualification, if it affects the strokes given.", scoreChange: 0, correct: true },
-                { text: "Loss of hole.", scoreChange: 1 },
-                { text: "No penalty.", scoreChange: 2 }
+                { text: "Disqualification.", scoreChange: 0, correct: true },
+                { text: "Loss of hole.", scoreChange: 2 },
+                { text: "General Penalty (2 strokes).", scoreChange: 1 }
             ],
-            explanation: "If you declare a handicap that is too high in match play and it affects the strokes given, you are disqualified.",
+            explanation: "If a player declares a wrong handicap that is too high and does not correct the mistake before the opponent makes their next stroke, the player is disqualified if this affects the number of strokes the player gives or gets.",
             example: "Example: In amateur club championships, declaring a 12 handicap when you are actually a 10 is grounds for immediate removal if you get extra strokes."
         },
         {
-            question: "A player drops a ball in the wrong place and plays it, gaining a significant advantage (e.g. bypassing a large tree).",
+            question: "During a match, your opponent asks how many strokes you've taken. You accidentally give the wrong number but correct the mistake before your opponent makes their next stroke.",
             choices: [
-                { text: "2 penalty strokes.", scoreChange: 1 },
-                { text: "Disqualification, unless the mistake is corrected before the next hole.", scoreChange: 0, correct: true },
-                { text: "Loss of hole.", scoreChange: 2 }
+                { text: "Loss of hole.", scoreChange: 2 },
+                { text: "1 penalty stroke.", scoreChange: 1 },
+                { text: "No penalty.", scoreChange: 0, correct: true }
             ],
-            explanation: "If a player plays from a wrong place and it is a serious breach (gaining a significant advantage), they must correct the mistake or face disqualification.",
-            example: "Example: Dropping your ball on the green instead of the fairway after taking relief is a serious breach requiring correction."
+            explanation: "The player gets the general penalty (loss of hole) if they give the opponent the wrong number of strokes taken, unless the player corrects that mistake before the opponent makes another stroke or takes a similar action.",
+            example: "Example: If you say 'I lie 3' but realize you lie 4, you must correct yourself before your opponent hits their approach shot."
         },
         {
-            question: "Before the final round, a player chips a few balls on the 1st hole fairway to warm up.",
+            question: "In match play, you incur a penalty stroke but fail to tell your opponent. However, your opponent was standing right next to you and clearly saw you take the penalty drop.",
             choices: [
-                { text: "Allowed in Match Play, Disqualification in Stroke Play.", scoreChange: 0, correct: true },
-                { text: "Allowed in both.", scoreChange: 2 },
-                { text: "2 penalty strokes in Stroke Play.", scoreChange: 1 }
+                { text: "Loss of hole.", scoreChange: 2 },
+                { text: "1 penalty stroke.", scoreChange: 1 },
+                { text: "No penalty.", scoreChange: 0, correct: true }
             ],
-            explanation: "You may practice on the course before a match play round, but you must not do so before a stroke play round. Doing so incurs a penalty, and an additional stroke results in DQ.",
-            example: "Example: Stroke play events require strict adherence to practice area limits before the round begins."
+            explanation: "If the opponent knew that the player had a penalty, such as when seeing the player obviously take penalty relief, the player gets no penalty for failing to tell the opponent about it.",
+            example: "Example: You are exempt from the loss of hole penalty if your opponent watched you drop your ball out of a water hazard."
         },
         {
-            question: "In match play, Player A kicks Player B's ball by accident while looking for their own.",
+            question: "In match play, you are uncertain about a rule. You decide to play two balls for the rest of the hole and ask the Committee for a ruling later.",
             choices: [
-                { text: "Loss of hole for Player A.", scoreChange: 2 },
-                { text: "1 penalty stroke for Player A.", scoreChange: 0, correct: true },
-                { text: "No penalty.", scoreChange: 1 }
+                { text: "You must choose the lowest score.", scoreChange: 1 },
+                { text: "You lose the hole.", scoreChange: 0, correct: true },
+                { text: "You must choose the highest score.", scoreChange: 2 }
             ],
-            explanation: "If an opponent lifts or moves your ball at rest, they receive a one-stroke penalty, and the ball must be replaced.",
-            example: "Example: In a heated match, carelessly walking near your opponent's ball and kicking it costs you a penalty stroke."
+            explanation: "A player who is uncertain about the right procedure in a match is not allowed to play out the hole with two balls. That procedure applies only in stroke play.",
+            example: "Example: Match play forces you to decide on a single course of action; playing two balls is strictly forbidden."
         },
         {
-            question: "In stroke play, Player A and Player B agree that Player B will putt first, out of turn, to show Player A the break of the green.",
-            choices: [
-                { text: "No penalty, 'Ready Golf' applies.", scoreChange: 2 },
-                { text: "Both players receive the General Penalty (2 strokes).", scoreChange: 0, correct: true },
-                { text: "Disqualification.", scoreChange: 1 }
-            ],
-            explanation: "If two players agree to play out of turn to give one of them an advantage, they both receive the general penalty.",
-            example: "Example: While 'Ready Golf' is encouraged, colluding to read greens violates the spirit of stroke play competition."
-        },
-        {
-            question: "Player A hits a ball out of the deep rough, only to discover it was a stray ball, not theirs.",
-            choices: [
-                { text: "Loss of hole in Match Play, 2 penalty strokes in Stroke Play.", scoreChange: 0, correct: true },
-                { text: "2 penalty strokes in both.", scoreChange: 1 },
-                { text: "Disqualification in both.", scoreChange: 2 }
-            ],
-            explanation: "Playing a wrong ball results in loss of hole in match play, but a two-stroke penalty in stroke play, where the mistake must also be corrected.",
-            example: "Example: Tiger Woods and Aaron Wise narrowly avoided playing wrong balls in Match Play, which would have meant loss of hole."
-        },
-        {
-            question: "Two players in a stroke play event agree to ignore a 1-stroke penalty one of them incurred.",
-            choices: [
-                { text: "1 penalty stroke added to both.", scoreChange: 2 },
-                { text: "General penalty to both.", scoreChange: 1 },
-                { text: "Both players are disqualified.", scoreChange: 0, correct: true }
-            ],
-            explanation: "If you and another player deliberately agree to ignore any Rule or penalty, you are both disqualified.",
-            example: "Example: Protecting the field is paramount in stroke play. Collusion to avoid penalties strips the integrity of the tournament."
-        },
-        {
-            question: "A player's tee shot goes directly into a lake. The player declares they are hitting a provisional ball and re-tees.",
-            choices: [
-                { text: "Legal. They are hitting a provisional.", scoreChange: 2 },
-                { text: "The new ball is the ball in play under Stroke-and-Distance penalty.", scoreChange: 0, correct: true },
-                { text: "Loss of hole.", scoreChange: 1 }
-            ],
-            explanation: "You cannot play a provisional ball if the only possible place your original ball could be lost is in a penalty area. The new ball becomes the ball in play.",
-            example: "Example: If you hit it in the middle of a massive pond, you cannot hit a 'provisional'. You must take penalty area relief."
-        },
-        {
-            question: "A player realizes they forgot to sign their scorecard after turning it into the scoring tent and leaving the area.",
-            choices: [
-                { text: "Disqualification.", scoreChange: 0, correct: true },
-                { text: "2 penalty strokes.", scoreChange: 1 },
-                { text: "No penalty, the marker's signature is enough.", scoreChange: 2 }
-            ],
-            explanation: "You will be disqualified if you fail to certify (sign) the hole scores on your scorecard before returning it.",
-            example: "Example: Several players on the PGA Tour have faced heartbreaking DQs simply for walking out of the tent without signing the card."
-        },
-        {
-            question: "A squirrel runs onto the green, grabs a player's ball, and runs away with it.",
-            choices: [
-                { text: "The player must play from where the squirrel drops it.", scoreChange: 2 },
-                { text: "The player must take a 1-stroke penalty.", scoreChange: 1 },
-                { text: "The ball must be replaced on its original spot without penalty.", scoreChange: 0, correct: true }
-            ],
-            explanation: "If it is known or virtually certain that an animal moved your ball, it must be replaced on its original spot without penalty.",
-            example: "Example: Foxes and squirrels stealing golf balls provide great TV moments, and the rules protect the player with a free replacement."
-        },
-        {
-            question: "In stroke play, a player is uncertain how to take relief. They decide to play two balls to finish the hole.",
-            choices: [
-                { text: "They must choose the lowest score.", scoreChange: 2 },
-                { text: "They must report the facts to the Committee before returning their scorecard.", scoreChange: 0, correct: true },
-                { text: "They are disqualified immediately.", scoreChange: 1 }
-            ],
-            explanation: "In stroke play, if you are uncertain of the rules, you may play two balls, but you must report the facts to the Committee or face disqualification.",
-            example: "Example: If a referee isn't nearby, playing two balls prevents delays, but the committee must finalize the score."
-        },
-        {
-            question: "A player is searching for their ball in a bunker and accidentally kicks sand over it, completely burying it.",
+            question: "In match play, your opponent plays out of turn from the fairway.",
             choices: [
                 { text: "1 penalty stroke.", scoreChange: 1 },
-                { text: "General penalty.", scoreChange: 2 },
-                { text: "No penalty, but they must re-create the lie.", scoreChange: 0, correct: true }
+                { text: "Loss of hole.", scoreChange: 2 },
+                { text: "No penalty, but you may cancel their stroke.", scoreChange: 0, correct: true }
             ],
-            explanation: "If your ball was covered by sand during search, the original lie must be re-created, but a small part of the ball may be left visible.",
-            example: "Example: Searching in deep bunkers requires care, but accidental burying is forgiven if the lie is recreated."
+            explanation: "In match play, the order of play is fundamental; if a player plays out of turn, the opponent may cancel that stroke and make the player play again.",
+            example: "Example: You can let a terrible out-of-turn shot stand, but force your opponent to replay a perfect approach shot."
         },
         {
-            question: "A player uses a laser rangefinder that also displays the 'plays like' distance adjusted for elevation.",
+            question: "In stroke play, you play out of turn to save time.",
             choices: [
-                { text: "Allowed.", scoreChange: 2 },
-                { text: "Disqualification on first breach.", scoreChange: 1 },
-                { text: "General penalty on first breach, DQ on second.", scoreChange: 0, correct: true }
+                { text: "No penalty, 'Ready Golf' is allowed.", scoreChange: 0, correct: true },
+                { text: "1 penalty stroke.", scoreChange: 1 },
+                { text: "General Penalty.", scoreChange: 2 }
             ],
-            explanation: "Using a device to measure elevation changes is not allowed. The penalty for the first breach of equipment rules is the General Penalty.",
-            example: "Example: Many rangefinders have a 'slope' toggle switch that must be visibly turned off during tournament play."
+            explanation: "In stroke play, there is no penalty for playing out of turn, and players are both allowed and encouraged to play 'ready golf' in a safe and responsible way.",
+            example: "Example: Ready Golf has been officially endorsed to combat slow play on courses worldwide."
         },
         {
-            question: "A spectator deliberately stops a player's rolling ball with their foot.",
+            question: "In a stroke play competition under the World Handicap System, you return your scorecard without writing your handicap on it.",
             choices: [
-                { text: "The player must replay the stroke.", scoreChange: 1 },
-                { text: "The ball must be placed where it would have come to rest.", scoreChange: 0, correct: true },
+                { text: "Disqualification.", scoreChange: 2 },
+                { text: "No penalty.", scoreChange: 0, correct: true },
+                { text: "General Penalty.", scoreChange: 1 }
+            ],
+            explanation: "Following the adoption of the World Handicap System in 2023, players are no longer penalized for failing to put their handicap on their scorecard. The committee is responsible for calculating handicap strokes.",
+            example: "Example: Prior to 2023, this administrative error caused many heartbreaking disqualifications."
+        },
+        {
+            question: "In stroke play, you return a scorecard with a lower score because you excluded a penalty stroke you did not know you had incurred.",
+            choices: [
+                { text: "Disqualification.", scoreChange: 2 },
+                { text: "The score is adjusted and the penalty is applied, no DQ.", scoreChange: 0, correct: true },
+                { text: "The lower score stands.", scoreChange: 1 }
+            ],
+            explanation: "If a player's hole score is lower than the actual score because they excluded a penalty stroke they did not know about before returning the scorecard, they are not disqualified.",
+            example: "Example: This rule protects players who unknowingly breached a complex rule from being thrown out of the tournament."
+        },
+        {
+            question: "In stroke play, you return a scorecard that is not signed by you.",
+            choices: [
+                { text: "Disqualification.", scoreChange: 0, correct: true },
+                { text: "General Penalty.", scoreChange: 1 },
+                { text: "No penalty, the marker's signature is enough.", scoreChange: 2 }
+            ],
+            explanation: "The marker and the player must certify the scores by physical signature or electronic certification approved by the Committee. Failing to certify the hole scores results in disqualification.",
+            example: "Example: Players spend several minutes in the scoring tent meticulously checking scores and signatures before leaving."
+        },
+        {
+            question: "In a Four-Ball stroke play competition, your partner holes out, but you pick up your ball without finishing the hole.",
+            choices: [
+                { text: "Your side is disqualified.", scoreChange: 2 },
+                { text: "Your side receives the General Penalty.", scoreChange: 1 },
+                { text: "No penalty. Your partner's score is the side's score.", scoreChange: 0, correct: true }
+            ],
+            explanation: "When only one partner holes out, that partner's score is the side's score for the hole. The other partner does not need to hole out.",
+            example: "Example: If you hit your tee shot out of bounds in Four-Ball, you can simply pick up and let your partner finish the hole."
+        },
+        {
+            question: "In a Four-Ball competition, you and your partner both fail to tee off on time, arriving 6 minutes late.",
+            choices: [
+                { text: "Your side is disqualified.", scoreChange: 0, correct: true },
+                { text: "Your side receives the General Penalty.", scoreChange: 1 },
+                { text: "The first player to tee off receives a penalty.", scoreChange: 2 }
+            ],
+            explanation: "A side is disqualified if both partners get a penalty of disqualification under Rule 5.3 for starting and ending the round.",
+            example: "Example: Arriving more than 5 minutes late to the tee results in disqualification for both players on the side."
+        },
+        {
+            question: "In a Four-Ball stroke play competition, your partner plays a wrong ball. You play the correct ball.",
+            choices: [
+                { text: "Your side is disqualified.", scoreChange: 2 },
+                { text: "Your partner has no valid score for the hole, but your score counts for the side.", scoreChange: 0, correct: true },
+                { text: "Your side receives the General Penalty.", scoreChange: 1 }
+            ],
+            explanation: "If a player breaches a Rule with a penalty of disqualification, the player is not disqualified from the competition, but their score on the hole cannot count for the side.",
+            example: "Example: If your partner plays a wrong ball and fails to correct it, they are out of the hole, but you can still post a score for the team."
+        },
+        {
+            question: "In a Foursomes (Alternate Shot) stroke play competition, you accidentally hit the tee shot when it was your partner's turn.",
+            choices: [
+                { text: "General Penalty, the side must correct the mistake.", scoreChange: 0, correct: true },
+                { text: "1 penalty stroke, play as it lies.", scoreChange: 1 },
+                { text: "Disqualification.", scoreChange: 2 }
+            ],
+            explanation: "If a partner makes a stroke in the wrong order in stroke play, the side gets the general penalty and must correct the mistake. The stroke made in the wrong order is canceled.",
+            example: "Example: You must swallow the 2-stroke penalty, cancel the shot, and have the correct partner tee off."
+        },
+        {
+            question: "In a Foursomes (Alternate Shot) match play competition, you accidentally hit the tee shot when it was your partner's turn.",
+            choices: [
+                { text: "General Penalty.", scoreChange: 1 },
+                { text: "Your side loses the hole.", scoreChange: 0, correct: true },
+                { text: "No penalty, but your opponent may cancel the stroke.", scoreChange: 2 }
+            ],
+            explanation: "In match play, if you or your partner makes a stroke in the wrong order in Foursomes, your side immediately loses the hole.",
+            example: "Example: Match play is unforgiving with Alternate Shot rules; playing out of turn ends the hole instantly."
+        },
+        {
+            question: "In a Stableford competition, you fail to hole out.",
+            choices: [
+                { text: "Disqualification.", scoreChange: 2 },
+                { text: "General Penalty.", scoreChange: 1 },
+                { text: "You receive 0 points for the hole.", scoreChange: 0, correct: true }
+            ],
+            explanation: "A player who does not hole out under the Rules for any reason gets zero points for the hole. They are not disqualified.",
+            example: "Example: To help pace of play, players are encouraged to stop playing a hole when their score will result in zero points."
+        },
+        {
+            question: "In a Stableford competition, you play from a wrong place, resulting in a serious breach. You do not correct the mistake.",
+            choices: [
+                { text: "Disqualification.", scoreChange: 2 },
+                { text: "You receive 0 points for the hole.", scoreChange: 0, correct: true },
+                { text: "General Penalty.", scoreChange: 1 }
+            ],
+            explanation: "Failure to correct a mistake of playing from a wrong place when there is a serious breach means the player gets zero points for the hole, but is not disqualified.",
+            example: "Example: Stableford is designed to prevent full-round disqualifications for single-hole blow-ups or uncorrected procedural errors."
+        },
+        {
+            question: "In a Stableford competition, you realize on the 2nd hole that you have 15 clubs in your bag.",
+            choices: [
+                { text: "Deduct two points per hole for a maximum of four points deducted from your total round score.", scoreChange: 0, correct: true },
+                { text: "Disqualification.", scoreChange: 2 },
+                { text: "General Penalty applied to the hole.", scoreChange: 1 }
+            ],
+            explanation: "Penalties other than disqualification are added to your score, except for excess clubs, where points are deducted from your total round score for a breach.",
+            example: "Example: The Committee will manually subtract the points from your final tally at the end of the round."
+        },
+        {
+            question: "In a Stableford competition, you unknowingly leave out a penalty stroke on your scorecard that would have lowered your points.",
+            choices: [
+                { text: "Disqualification.", scoreChange: 2 },
+                { text: "The Committee adjusts your points, no DQ.", scoreChange: 0, correct: true },
+                { text: "Your score stands.", scoreChange: 1 }
+            ],
+            explanation: "If you fail to include a penalty on your scorecard that you did not know about, you are not disqualified; the Committee simply adjusts the points.",
+            example: "Example: The modernization of scoring protects players from honest, complex rules misunderstandings."
+        },
+        {
+            question: "In a Maximum Score stroke play competition, you reach the maximum score limit for the hole but haven't holed out.",
+            choices: [
+                { text: "You must hole out.", scoreChange: 2 },
+                { text: "You receive the maximum score and should pick up your ball.", scoreChange: 0, correct: true },
+                { text: "Disqualification.", scoreChange: 1 }
+            ],
+            explanation: "If you do not hole out correctly under the Rules for any reason, you get the maximum score for the hole. To help pace of play, you are encouraged to stop playing.",
+            example: "Example: If the max score is Net Double Bogey, simply pick the ball up once you reach it to speed up play."
+        },
+        {
+            question: "In a Par/Bogey competition, you fail to hole out.",
+            choices: [
+                { text: "Disqualification.", scoreChange: 2 },
+                { text: "General Penalty.", scoreChange: 1 },
+                { text: "You lose the hole.", scoreChange: 0, correct: true }
+            ],
+            explanation: "A player who does not hole out under the Rules for any reason loses the hole. They are not disqualified.",
+            example: "Example: Par/Bogey is scored like match play against the course; if you can't beat or tie the fixed score, you lose the hole and move on."
+        },
+        {
+            question: "In stroke play, you are uncertain of a rule and play two balls. You score a 4 with both balls, but fail to report the situation to the Committee.",
+            choices: [
+                { text: "Disqualification.", scoreChange: 0, correct: true },
+                { text: "Your score of 4 stands.", scoreChange: 2 },
+                { text: "General Penalty.", scoreChange: 1 }
+            ],
+            explanation: "The player must report the facts of the situation to the Committee before returning the scorecard, even if the player scores the same with both balls. The player is disqualified if they fail to do so.",
+            example: "Example: The Committee must always be informed of procedural uncertainties to ensure the integrity of the field."
+        },
+        {
+            question: "In stroke play, you are uncertain of a rule and play two balls. The original ball was played from a wrong place, resulting in a serious breach. What is your score?",
+            choices: [
+                { text: "The score with the original ball counts.", scoreChange: 2 },
+                { text: "The score with the second ball counts, plus a General Penalty (2 strokes).", scoreChange: 0, correct: true },
+                { text: "Disqualification.", scoreChange: 1 }
+            ],
+            explanation: "If it was a serious breach, the score with the ball played to correct the mistake counts, and the player gets the general penalty (two penalty strokes) added to that score.",
+            example: "Example: The stroke made with the original ball from the wrong place and any subsequent strokes with it do not count."
+        },
+        {
+            question: "A referee gives you an incorrect ruling during a round, and you take an action in breach of a Rule based on their instruction.",
+            choices: [
+                { text: "Disqualification.", scoreChange: 2 },
+                { text: "General Penalty.", scoreChange: 1 },
+                { text: "No penalty, the wrong ruling stands if it is too late to correct.", scoreChange: 0, correct: true }
+            ],
+            explanation: "If a player takes an action in breach of a Rule based on a reasonable misunderstanding of a referee's instruction, there is no penalty and the instruction is treated like a wrong ruling.",
+            example: "Example: If a referee tells you to lift your ball when not allowed, you are protected from penalty."
+        },
+        {
+            question: "After a stroke play competition has closed, the Committee realizes they miscalculated a handicap, resulting in the wrong player winning.",
+            choices: [
+                { text: "The result stands.", scoreChange: 2 },
+                { text: "The players must play a playoff.", scoreChange: 1 },
+                { text: "The mistake should be corrected and the results amended.", scoreChange: 0, correct: true }
+            ],
+            explanation: "An administrative mistake is a procedural error in relation to the administration of the competition and there is no time limit for correcting such a mistake.",
+            example: "Example: Trophies have been re-awarded days after a tournament due to committee mathematical errors."
+        },
+        {
+            question: "When applying the Rules, video evidence shows a player's ball moved, but the movement could not reasonably have been seen with the naked eye.",
+            choices: [
+                { text: "General Penalty.", scoreChange: 2 },
+                { text: "1 penalty stroke.", scoreChange: 1 },
+                { text: "The video evidence is disregarded.", scoreChange: 0, correct: true }
+            ],
+            explanation: "When the Committee is deciding questions of fact, if the facts shown on the video could not reasonably have been seen with the naked eye, that video evidence will be disregarded even if it indicates a breach.",
+            example: "Example: This standard protects players from high-definition, super-slow-motion cameras catching micro-movements."
+        },
+        {
+            question: "The decision to limit video evidence for infractions that 'can't be seen with the naked eye' was widely nicknamed after which LPGA Tour professional?",
+            choices: [
+                { text: "Michelle Wie", scoreChange: 2 },
+                { text: "Nelly Korda", scoreChange: 1 },
+                { text: "Lexi Thompson", scoreChange: 0, correct: true }
+            ],
+            explanation: "Media outlets nicknamed it the 'Lexi Thompson rule' following an incident at the 2017 ANA Inspiration where she was retroactively penalized four strokes from a TV viewer's report.",
+            example: "Example: The uproar over her 4-stroke penalty for mis-replacing a ball by an invisible margin prompted the governing bodies to act."
+        },
+        {
+            question: "Can a Committee set its own standards of player conduct and issue penalties for breaching them?",
+            choices: [
+                { text: "No, only the USGA/R&A can set conduct rules.", scoreChange: 2 },
+                { text: "Yes, but they can only issue warnings.", scoreChange: 1 },
+                { text: "Yes, the Committee may adopt a Code of Conduct as a Local Rule.", scoreChange: 0, correct: true }
+            ],
+            explanation: "The Committee may set its own standards of player conduct in a Code of Conduct adopted as a Local Rule. The Code may include penalties such as a one-stroke penalty or the general penalty.",
+            example: "Example: A club can legally assess a 1-stroke penalty to a player for failing to rake a bunker under their Code of Conduct."
+        },
+        {
+            question: "During a round, you ask a spectator how far you are from the 150-yard marker.",
+            choices: [
+                { text: "General Penalty.", scoreChange: 2 },
+                { text: "No penalty, this is public information.", scoreChange: 0, correct: true },
+                { text: "1 penalty stroke.", scoreChange: 1 }
+            ],
+            explanation: "Advice does not include public information, such as the distance from one point to another, wind direction, or the location of things on the course.",
+            example: "Example: Discussing yardages or wind direction with anyone, including opponents and fans, is entirely legal."
+        },
+        {
+            question: "In a team competition, the Committee may adopt a Local Rule allowing each team to name one person who may give advice to players on the team.",
+            choices: [
+                { text: "This is false.", scoreChange: 2 },
+                { text: "This is true, and they are called the 'Advice Giver'.", scoreChange: 0, correct: true },
+                { text: "This is true, but they cannot step onto the putting green.", scoreChange: 1 }
+            ],
+            explanation: "The Committee may adopt a Local Rule allowing each team to name one person (an 'advice giver') who may give advice to players on the team during a round.",
+            example: "Example: College golf coaches frequently utilize this rule to legally coach their players mid-round."
+        },
+        {
+            question: "You use a laser rangefinder that measures elevation changes (slope) on the 1st hole.",
+            choices: [
+                { text: "Disqualification immediately.", scoreChange: 2 },
+                { text: "General Penalty on the first breach, Disqualification for a second breach.", scoreChange: 0, correct: true },
+                { text: "No penalty as long as it's turned off.", scoreChange: 1 }
+            ],
+            explanation: "Using a device to measure elevation changes is not allowed. The penalty for the first breach of using equipment in an abnormal way is the General Penalty, and the penalty for a second breach is Disqualification.",
+            example: "Example: Make sure the 'slope' toggle switch on your rangefinder is visibly turned off before teeing off."
+        },
+        {
+            question: "You listen to music through headphones specifically to help establish a smooth swing tempo.",
+            choices: [
+                { text: "General Penalty.", scoreChange: 0, correct: true },
+                { text: "1 penalty stroke.", scoreChange: 1 },
+                { text: "No penalty.", scoreChange: 2 }
+            ],
+            explanation: "Listening to music or other audio to eliminate distractions or to help with swing tempo is not allowed and is a breach of Rule 4.3.",
+            example: "Example: Using audio specifically to gain a competitive advantage in your swing mechanics is banned."
+        },
+        {
+            question: "You slam your driver into the ground in anger, snapping the shaft. Can you replace it?",
+            choices: [
+                { text: "Yes, but with a 2-stroke penalty.", scoreChange: 1 },
+                { text: "No, because the club was damaged through abuse.", scoreChange: 0, correct: true },
+                { text: "Yes, broken clubs can always be replaced.", scoreChange: 2 }
+            ],
+            explanation: "If a player damages a club during a round, they may continue to make strokes with it, but they must not replace it if the damage was caused by abuse.",
+            example: "Example: If a Tour Pro snaps their putter in frustration, they will have to putt with their wedge for the remainder of the round."
+        },
+        {
+            question: "Under the modifications for players with disabilities, are players who are amputees allowed to anchor the club?",
+            choices: [
+                { text: "No, anchoring is universally banned.", scoreChange: 2 },
+                { text: "Yes, under Rule 25.3b.", scoreChange: 0, correct: true },
+                { text: "Yes, but only with a putter.", scoreChange: 1 }
+            ],
+            explanation: "Rule 25 modifies certain Rules for players with disabilities. Modifications for players who are amputees include an exception allowing them to anchor the club.",
+            example: "Example: The 2023 integration of Rule 25 directly into the main rulebook ensures inclusive practices without needing local rules."
+        },
+        {
+            question: "Under the modifications for players with disabilities, a player's physical limitations make it difficult to know if they dropped the ball from knee height.",
+            choices: [
+                { text: "They must have their caddie drop it.", scoreChange: 1 },
+                { text: "They must place the ball instead.", scoreChange: 2 },
+                { text: "The Committee should accept the player's reasonable judgment and efforts.", scoreChange: 0, correct: true }
+            ],
+            explanation: "The Committee should accept the player's reasonable judgment that they have done so, taking into account the player's physical limitations.",
+            example: "Example: Reasonable effort to drop from knee height is sufficient for players with assistive mobility devices."
+        },
+        {
+            question: "When applying the rule against unreasonable delay to players with disabilities, how should Committees act?",
+            choices: [
+                { text: "They must strictly enforce the 40-second rule.", scoreChange: 2 },
+                { text: "They cannot enforce pace of play.", scoreChange: 1 },
+                { text: "They should use a more relaxed interpretation of unreasonable delay.", scoreChange: 0, correct: true }
+            ],
+            explanation: "Taking factors like weather and assistive mobility devices into account, it may be appropriate for Committees to use a more relaxed interpretation of what constitutes unreasonable delay.",
+            example: "Example: Allowances must be made for the extra time it may take to navigate terrain in a wheeled mobility device."
+        },
+        {
+            question: "You oversleep and arrive at the 1st tee exactly 2 minutes after your assigned starting time.",
+            choices: [
+                { text: "Disqualification.", scoreChange: 2 },
+                { text: "General Penalty applied to the first hole.", scoreChange: 0, correct: true },
+                { text: "No penalty.", scoreChange: 1 }
+            ],
+            explanation: "Arriving late but within five minutes of your starting time usually carries the General Penalty (2 strokes) rather than immediate disqualification.",
+            example: "Example: Rory McIlroy famously nearly missed his Ryder Cup tee time in 2012, arriving with just minutes to spare."
+        },
+        {
+            question: "You oversleep and arrive at the 1st tee exactly 6 minutes after your assigned starting time.",
+            choices: [
+                { text: "Disqualification.", scoreChange: 0, correct: true },
+                { text: "General Penalty applied to the first hole.", scoreChange: 1 },
+                { text: "Loss of hole.", scoreChange: 2 }
+            ],
+            explanation: "If you arrive more than five minutes after your starting time, you are disqualified.",
+            example: "Example: There is a strict 5-minute grace period before the ultimate penalty is assessed."
+        },
+        {
+            question: "You refuse to play your next shot because you are fiercely arguing with a referee about a previous ruling.",
+            choices: [
+                { text: "1 penalty stroke.", scoreChange: 1 },
+                { text: "Disqualification.", scoreChange: 0, correct: true },
+                { text: "General Penalty.", scoreChange: 2 }
+            ],
+            explanation: "Players must play continuously and at a prompt pace. Refusing to play due to an unreasonable delay results in disqualification.",
+            example: "Example: Even if you are furious about a ruling, you must play your shot to keep the pace of play going."
+        },
+        {
+            question: "It is thundering, and you believe there is danger from lightning. You immediately stop play and walk to the clubhouse.",
+            choices: [
+                { text: "Disqualification.", scoreChange: 2 },
+                { text: "No penalty, this is allowed.", scoreChange: 0, correct: true },
+                { text: "General Penalty.", scoreChange: 1 }
+            ],
+            explanation: "You may stop play if you believe there is danger from lightning, without waiting for the Committee to suspend play.",
+            example: "Example: Player safety is paramount; you do not need official permission to seek shelter from lightning."
+        },
+        {
+            question: "You take penalty relief and drop your ball in the correct relief area. Seconds later, a gust of wind blows it out of bounds.",
+            choices: [
+                { text: "Replace the ball on the exact spot it had come to rest without penalty.", scoreChange: 0, correct: true },
+                { text: "Play a new ball under penalty of Stroke and Distance.", scoreChange: 2 },
+                { text: "Re-drop the ball for 1 penalty stroke.", scoreChange: 1 }
+            ],
+            explanation: "A new exception in 2023 provides that a ball at rest must be replaced if it moves to another area of the course or comes to rest out of bounds after being dropped, placed or replaced.",
+            example: "Example: This protects players from being unfairly penalized by gravity or wind immediately after taking a legal drop."
+        },
+        {
+            question: "In stroke play, you hit a shot from the rough and realize it was a stray ball, not yours.",
+            choices: [
+                { text: "Disqualification.", scoreChange: 2 },
+                { text: "1 penalty stroke.", scoreChange: 1 },
+                { text: "2 penalty strokes, and you must correct the mistake.", scoreChange: 0, correct: true }
+            ],
+            explanation: "Playing a wrong ball in stroke play results in a two-stroke penalty, and you must correct the mistake by playing the right ball.",
+            example: "Example: Failing to correct the mistake of playing a wrong ball before teeing off on the next hole results in disqualification."
+        },
+        {
+            question: "In match play, you are searching for your opponent's ball in the deep rough and accidentally kick it.",
+            choices: [
+                { text: "Loss of hole.", scoreChange: 2 },
+                { text: "No penalty, replace the ball.", scoreChange: 0, correct: true },
+                { text: "1 penalty stroke.", scoreChange: 1 }
+            ],
+            explanation: "If an opponent accidentally moves your ball in match play while searching for it, there is no penalty, but the ball must be replaced.",
+            example: "Example: Accidental kicks during a search do not incur penalties to encourage players to help each other look."
+        },
+        {
+            question: "In match play, you carelessly walk across the fairway and accidentally kick your opponent's ball which was in plain sight.",
+            choices: [
+                { text: "1 penalty stroke, and the ball must be replaced.", scoreChange: 0, correct: true },
+                { text: "Loss of hole.", scoreChange: 2 },
+                { text: "No penalty.", scoreChange: 1 }
+            ],
+            explanation: "If you touch or move an opponent's ball when NOT searching for it, you receive 1 penalty stroke and the ball must be replaced.",
+            example: "Example: You must be careful where you walk; clumsy navigation costs a stroke."
+        },
+        {
+            question: "In match play, your opponent's ball is rolling past the hole and you deliberately stop it with your foot when there is no reasonable chance it can be holed.",
+            choices: [
+                { text: "You lose the hole.", scoreChange: 2 },
+                { text: "You win the hole.", scoreChange: 0, correct: true },
+                { text: "Your opponent replays the stroke.", scoreChange: 1 }
+            ],
+            explanation: "If an opponent's ball in motion is deliberately deflected at a time when there is no reasonable chance it can be holed, the result of the hole has been decided and the player wins the hole.",
+            example: "Example: Stopping a completely missed putt to save time essentially acts as a concession of the match's state."
+        },
+        {
+            question: "You find a muddy ball in the rough. You lift it to identify it without marking its spot first.",
+            choices: [
+                { text: "No penalty.", scoreChange: 2 },
+                { text: "1 penalty stroke.", scoreChange: 0, correct: true },
+                { text: "General Penalty.", scoreChange: 1 }
+            ],
+            explanation: "You must add one penalty stroke if you did not mark the ball before lifting it, cleaned it more than necessary, or lifted it when not necessary to identify it.",
+            example: "Example: Always place a tee right behind the ball before touching it to identify your mark."
+        },
+        {
+            question: "You hit your tee shot and the ball shatters into pieces in mid-air.",
+            choices: [
+                { text: "The stroke is canceled, replay without penalty.", scoreChange: 0, correct: true },
+                { text: "The stroke counts, play the largest piece.", scoreChange: 2 },
+                { text: "1 penalty stroke, drop a new ball.", scoreChange: 1 }
+            ],
+            explanation: "If a player's ball breaks into pieces after a stroke, there is no penalty and the stroke does not count. The player must play another ball from where that stroke was made.",
+            example: "Example: During a cold morning round, a cracked golf ball allows you to legally re-tee a fresh ball."
+        },
+        {
+            question: "Your ball rests in a hole dug by a dog in the rough.",
+            choices: [
+                { text: "Play as it lies.", scoreChange: 2 },
+                { text: "1 penalty stroke.", scoreChange: 1 },
+                { text: "Free relief.", scoreChange: 0, correct: true }
+            ],
+            explanation: "An animal hole is an abnormal course condition, and you are allowed free relief anywhere in the general area. A dog is an animal, whereas worms or insects are loose impediments.",
+            example: "Example: Holes dug by mammals or reptiles grant free relief under abnormal course conditions."
+        },
+        {
+            question: "Your ball is just off the green on the fringe. There is sand in your line of play, so you brush it away.",
+            choices: [
+                { text: "General Penalty.", scoreChange: 0, correct: true },
+                { text: "No penalty.", scoreChange: 2 },
+                { text: "1 penalty stroke.", scoreChange: 1 }
+            ],
+            explanation: "Sand and loose soil are not loose impediments. Removing sand anywhere other than the putting green to improve your line of play incurs the General Penalty.",
+            example: "Example: Tour Pros must resist the urge to sweep sand off the fringe, even if it was splashed there from a bunker."
+        },
+        {
+            question: "You arrive at your ball in the morning and brush away heavy dew on your line of play.",
+            choices: [
+                { text: "General Penalty.", scoreChange: 0, correct: true },
+                { text: "1 penalty stroke.", scoreChange: 1 },
+                { text: "No penalty.", scoreChange: 2 }
+            ],
+            explanation: "Dew, frost, and water are not loose impediments and you must not remove them to improve your conditions, incurring the General Penalty.",
+            example: "Example: Early morning tee times require players to account for heavy dew on their putts without sweeping it away."
+        },
+        {
+            question: "Your ball rests in temporary water. How do you find the point of maximum available relief?",
+            choices: [
+                { text: "The driest spot within 2 club-lengths.", scoreChange: 1 },
+                { text: "Where the abnormal condition least interferes with the stroke you would have made.", scoreChange: 0, correct: true },
+                { text: "Directly behind the temporary water.", scoreChange: 2 }
+            ],
+            explanation: "It is the estimated point where the abnormal course condition least interferes with the stroke you would have made from the original spot if the condition did not exist.",
+            example: "Example: The point of maximum available relief may be where your ball will be in shallower water than where you will stand, or vice versa."
+        },
+        {
+            question: "Which of the following is an option for Red Penalty Areas that is NOT allowed for Yellow Penalty Areas?",
+            choices: [
+                { text: "Lateral relief.", scoreChange: 0, correct: true },
+                { text: "Stroke-and-distance relief.", scoreChange: 2 },
+                { text: "Back-on-the-line relief.", scoreChange: 1 }
+            ],
+            explanation: "If your ball last crossed the edge of a red penalty area, you have the extra option to take lateral relief (within two club-lengths). Yellow penalty areas only allow back-on-the-line or stroke-and-distance.",
+            example: "Example: At the Masters on the 12th hole (yellow area), players in Rae's Creek must use the drop zone or go back-on-the-line."
+        },
+        {
+            question: "You hit your tee shot into a Red Penalty Area. You declare it unplayable under Rule 19 to take lateral relief.",
+            choices: [
+                { text: "This is a legal 1-stroke penalty option.", scoreChange: 2 },
+                { text: "This is a 2-stroke penalty.", scoreChange: 1 },
+                { text: "You cannot take unplayable ball relief for a ball in a penalty area.", scoreChange: 0, correct: true }
+            ],
+            explanation: "You are allowed to take unplayable ball relief anywhere on the course EXCEPT when your ball is in a penalty area. You must proceed under the penalty area rules.",
+            example: "Example: A player cannot use the 'unplayable' rule to escape a penalty area; they are strictly bound by Rule 17."
+        },
+        {
+            question: "Your ball is buried under the lip of a greenside bunker. You declare it unplayable and drop it completely OUTSIDE the bunker going back-on-the-line.",
+            choices: [
+                { text: "This costs 2 penalty strokes.", scoreChange: 0, correct: true },
+                { text: "This costs 1 penalty stroke.", scoreChange: 1 },
+                { text: "You cannot drop outside a bunker.", scoreChange: 2 }
+            ],
+            explanation: "As an extra relief option when your ball is in a bunker, for a total of two penalty strokes you may play from outside the bunker using the back-on-a-line procedure.",
+            example: "Example: Rory McIlroy utilized this 2-stroke unplayable bunker relief to escape a brutal lie in a deep pot bunker."
+        },
+        {
+            question: "Your ball rests against the flagstick in the hole. Part of the ball is below the surface, but it hasn't fallen to the bottom.",
+            choices: [
+                { text: "You must carefully remove the flagstick.", scoreChange: 1 },
+                { text: "The ball is treated as holed.", scoreChange: 0, correct: true },
+                { text: "1 penalty stroke to tap it in.", scoreChange: 2 }
+            ],
+            explanation: "If a ball rests against the flagstick and any part of the ball is below the surface of the putting green, the ball is treated as holed.",
+            example: "Example: This rule change alleviated the anxiety of carefully wiggling the pin out to ensure the ball drops."
+        },
+        {
+            question: "Your putt stops right on the lip of the hole, overhanging the edge. You wait 15 seconds, and it falls in.",
+            choices: [
+                { text: "You have holed out with your previous stroke, but must add 1 penalty stroke.", scoreChange: 0, correct: true },
+                { text: "It is considered holed with no penalty.", scoreChange: 2 },
+                { text: "You must replace the ball on the lip.", scoreChange: 1 }
+            ],
+            explanation: "You are allowed a reasonable time to reach the hole and ten extra seconds. If it falls in after that time, you have holed out but must add one penalty stroke.",
+            example: "Example: Tour players often nervously watch their ball for exactly 10 seconds before tapping it in to avoid the penalty."
+        },
+        {
+            question: "You drop your ball from knee height. It accidentally hits your foot before striking the ground.",
+            choices: [
+                { text: "Play it as it lies.", scoreChange: 2 },
+                { text: "1 penalty stroke.", scoreChange: 1 },
+                { text: "You must drop it again in the right way.", scoreChange: 0, correct: true }
+            ],
+            explanation: "A dropped ball must not touch any part of the player's body or equipment before it hits the ground. If it does, it was dropped incorrectly and must be dropped again.",
+            example: "Example: Ensure your feet are clear of the drop zone when releasing the ball from knee height."
+        },
+        {
+            question: "You drop your ball from knee height. It hits the ground and rolls 3 club-lengths away.",
+            choices: [
+                { text: "You must re-drop.", scoreChange: 0, correct: true },
+                { text: "Place the ball.", scoreChange: 1 },
                 { text: "Play it as it lies.", scoreChange: 2 }
             ],
-            explanation: "If a ball in motion is deliberately deflected or stopped by a person, the stroke counts and the ball must be dropped based on the estimated resting spot.",
-            example: "Example: If a fan stops a ball from rolling into a lake, the referee will determine where it would have ended up."
+            explanation: "If a dropped ball comes to rest outside the allowed relief area (which is typically one club length), you must lift it and drop it again.",
+            example: "Example: On steep slopes, players often have to re-drop twice, after which they are allowed to place the ball."
         },
         {
-            question: "A player hits a ball into a red penalty area. The ball is resting in shallow water.",
+            question: "In stroke play, you drop a ball in a wrong place and play it, bypassing a massive tree in your line of play.",
             choices: [
-                { text: "They can declare it unplayable and drop outside for 1 penalty stroke.", scoreChange: 2 },
-                { text: "They must play it as it lies.", scoreChange: 1 },
-                { text: "They cannot use the unplayable ball rule, but can take penalty area relief.", scoreChange: 0, correct: true }
+                { text: "General Penalty.", scoreChange: 1 },
+                { text: "This is a Serious Breach, you must correct the mistake or face DQ.", scoreChange: 0, correct: true },
+                { text: "Play it as it lies.", scoreChange: 2 }
             ],
-            explanation: "You may not take unplayable ball relief for a ball that is in a penalty area. You must use the specific penalty area relief options.",
-            example: "Example: A player cannot use the 'unplayable' rule to escape a penalty area; they are strictly bound by Rule 17."
+            explanation: "A Serious Breach is when playing from a wrong place gives the player a significant advantage. The player must correct the mistake or face disqualification.",
+            example: "Example: Dropping your ball in the fairway instead of the deep rough to bypass an obstacle requires immediate correction."
+        },
+        {
+            question: "Your ball is on the putting green, and you notice several spike marks on your line of putt.",
+            choices: [
+                { text: "You may repair them without penalty.", scoreChange: 0, correct: true },
+                { text: "1 penalty stroke to repair them.", scoreChange: 1 },
+                { text: "You cannot repair spike marks.", scoreChange: 2 }
+            ],
+            explanation: "A major rule change prior to 2019 allowed players to repair damage on the putting green, including spike marks, without penalty.",
+            example: "Example: You no longer have to putt over someone else's spike marks on the green."
+        },
+        {
+            question: "How long are you allowed to search for your ball before it is officially declared lost?",
+            choices: [
+                { text: "5 minutes.", scoreChange: 2 },
+                { text: "3 minutes.", scoreChange: 0, correct: true },
+                { text: "10 minutes.", scoreChange: 1 }
+            ],
+            explanation: "A ball is lost if not found in three minutes after the player or their caddie begins to search for it. The time was reduced from 5 minutes to speed up play.",
+            example: "Example: During the 2019 Open Championship, several players fell victim to the strict 3-minute search rule in the thick fescue."
+        },
+        {
+            question: "From what height must you drop your golf ball when taking relief?",
+            choices: [
+                { text: "Knee height.", scoreChange: 0, correct: true },
+                { text: "Shoulder height.", scoreChange: 2 },
+                { text: "Waist height.", scoreChange: 1 }
+            ],
+            explanation: "When dropping a ball, you must hold the ball at knee height and let go of the ball so that it falls straight down.",
+            example: "Example: It is no longer legal to drop the ball from shoulder height; the 2019 rules update mandated knee height drops."
+        },
+        {
+            question: "You putt from 10 feet away and decide to leave the unattended flagstick in the hole. Your putt strikes the flagstick.",
+            choices: [
+                { text: "1 penalty stroke.", scoreChange: 1 },
+                { text: "No penalty, play the ball as it lies.", scoreChange: 0, correct: true },
+                { text: "2 penalty strokes.", scoreChange: 2 }
+            ],
+            explanation: "There is no penalty if a ball in motion hits the flagstick left in the hole. This was updated in 2019 to speed up play.",
+            example: "Example: Bryson DeChambeau frequently leaves the flagstick in on long putts for a strategic backstop."
+        },
+        {
+            question: "Your ball is outside a Ground Under Repair (GUR) area, but you must stand inside the GUR to hit the ball.",
+            choices: [
+                { text: "You must play it as it lies.", scoreChange: 2 },
+                { text: "You may take free relief.", scoreChange: 0, correct: true },
+                { text: "1 penalty stroke to take relief.", scoreChange: 1 }
+            ],
+            explanation: "Free relief is allowed when an abnormal course condition (like GUR) interferes with the area of your intended stance or swing.",
+            example: "Example: Players frequently get free drops if their feet are touching the white paint of a GUR area."
+        },
+        {
+            question: "Your ball comes to rest in a completely flooded bunker, and you cannot find a spot in the bunker to drop that isn't in temporary water.",
+            choices: [
+                { text: "You must play it as it lies.", scoreChange: 2 },
+                { text: "You may drop outside the bunker under penalty of one stroke.", scoreChange: 0, correct: true },
+                { text: "You get free relief outside the bunker.", scoreChange: 1 }
+            ],
+            explanation: "If there is no nearest point of complete relief in the bunker, you may take relief outside the bunker for one penalty stroke using the back-on-the-line procedure.",
+            example: "Example: A completely flooded sand trap does not grant a free drop outside of it."
+        },
+        {
+            question: "Your approach shot plugs deeply into the soft fairway, embedding in its own pitch mark.",
+            choices: [
+                { text: "Free relief.", scoreChange: 0, correct: true },
+                { text: "Must play as it lies.", scoreChange: 2 },
+                { text: "1 penalty stroke.", scoreChange: 1 }
+            ],
+            explanation: "A player is allowed free relief for a ball embedded in its own pitch-mark anywhere in the general area.",
+            example: "Example: You may lift, clean, and drop your ball within one club-length of the spot right behind where it embedded."
+        },
+        {
+            question: "Your tee shot splashes into a lake. You declare a provisional ball and re-tee.",
+            choices: [
+                { text: "This is a legal provisional ball.", scoreChange: 2 },
+                { text: "The new ball becomes the ball in play under Stroke-and-Distance penalty.", scoreChange: 0, correct: true },
+                { text: "Loss of hole.", scoreChange: 1 }
+            ],
+            explanation: "A provisional ball may only be played if a ball might be lost outside a penalty area or out of bounds. You cannot play a provisional for a ball known to be in a penalty area.",
+            example: "Example: If you hit it directly into the middle of a massive pond, you cannot hit a 'provisional'."
+        },
+        {
+            question: "You hit a provisional ball. You then find your original ball in bounds within 3 minutes, but it is in a terrible lie.",
+            choices: [
+                { text: "You must abandon the provisional and play the original ball.", scoreChange: 0, correct: true },
+                { text: "You may choose to play either ball.", scoreChange: 1 },
+                { text: "You must play the provisional.", scoreChange: 2 }
+            ],
+            explanation: "If your original ball is found on the course before becoming lost, you must abandon your provisional ball and continue playing your original ball.",
+            example: "Example: Even if your provisional is in the middle of the fairway, you must play your original ball from the thick rough."
+        },
+        {
+            question: "Your ball lands in a fairway bunker. Right next to your ball is a dead leaf.",
+            choices: [
+                { text: "1 penalty stroke to move it.", scoreChange: 1 },
+                { text: "You cannot touch it.", scoreChange: 2 },
+                { text: "You may remove the leaf without penalty.", scoreChange: 0, correct: true }
+            ],
+            explanation: "Under the modernized rules, you may touch and remove loose impediments (like leaves, twigs, and stones) in a bunker without penalty.",
+            example: "Example: Prior to 2019, players were severely restricted in bunkers, but the rule change made sand play far more forgiving."
+        },
+        {
+            question: "Your ball comes to rest in a penalty area, right next to a sprinkler head.",
+            choices: [
+                { text: "Free relief.", scoreChange: 0, correct: true },
+                { text: "Play as it lies.", scoreChange: 2 },
+                { text: "1 penalty stroke.", scoreChange: 1 }
+            ],
+            explanation: "Sprinkler heads are immovable obstructions, which are abnormal course conditions. You are allowed free relief when they interfere, even in a penalty area.",
+            example: "Example: Artificial objects like drains and sprinklers grant relief regardless of being inside a hazard."
+        },
+        {
+            question: "In match play, your opponent accidentally drops their putter on your ball marker on the green, moving it.",
+            choices: [
+                { text: "No penalty, replace the marker.", scoreChange: 0, correct: true },
+                { text: "1 penalty stroke for opponent.", scoreChange: 1 },
+                { text: "Loss of hole for opponent.", scoreChange: 2 }
+            ],
+            explanation: "If a ball-marker is accidentally moved by an opponent in match play, there is no penalty and the marker must be replaced.",
+            example: "Example: Accidental movement of markers on the green is generally forgiven for all players."
+        },
+        {
+            question: "In what year were the first known written rules of golf, the '13 Articles', drafted?",
+            choices: [
+                { text: "1744", scoreChange: 0, correct: true },
+                { text: "1899", scoreChange: 2 },
+                { text: "1952", scoreChange: 1 }
+            ],
+            explanation: "The earliest surviving written rules of golf were produced by the Gentlemen Golfers of Leith on March 7, 1744, consisting of 13 rules.",
+            example: "Example: The 13 Articles laid the foundation for the game, including rules on water hazards and holing out."
         }
     ]
 };
